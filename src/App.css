@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background: #1a2e3a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.sortTypeButtonsDiv {
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.changeSortTypeButton {
+    height: 3rem;
+    width: 9rem;
+    border-style: none;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+}
+
+.changeSortTypeButton.activeButton {
+    background: #fc6f03;
+    color: white;
+    font-weight: 700;
+}
+
+.changeSortTypeButton.inactiveButton {
+    background: #253f4e;
+    color: white;
+    font-weight: 700;
+}
+
+.generateSortButtonsDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.generateArrayButton {
+    height: 3rem;
+    width: 9rem;
+    border-style: none;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    background: #006774;
+    color: white;
+}
+
+.sortButton {
+    height: 3rem;
+    width: 9rem;
+    border-style: none;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    background: #fc6f03;
+    color: white;
+    font-weight: 700;
+}
+
+.board {
+    width: 90vw;
+    height: 500px;
+    background: #1d3546;
+    /* background: #203744; */
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.bar {
+    width: 6px;
+}
+
+.bar.sorted {
+    background: #e46f16;
+}
+
+.bar.unsorted {
+    background: #b66d00;
 }
