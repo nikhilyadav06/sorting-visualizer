@@ -1,4 +1,4 @@
-const bubbleSort = (array, setArray) => {
+const bubbleSort = (array, setArray, setSorting, setSorted) => {
     let time = 1
     for(let i = array.length - 1; i > 0; i--) {
         for(let j = 0; j < i; j++) {
@@ -44,6 +44,8 @@ const bubbleSort = (array, setArray) => {
     function setter(array, ind) {
         setTimeout(() => {
             setArray([...array])
+            setSorting(false)
+            setSorted(true)
         }, 5 * ind)
     }
     const newArray = []
@@ -57,7 +59,7 @@ const bubbleSort = (array, setArray) => {
     time += 1
 }
 
-const selectionSort = (array, setArray) => {
+const selectionSort = (array, setArray, setSorting, setSorted) => {
     let time = 1
     for(let i = 0; i < array.length; i++) {
         let minInd = i
@@ -87,9 +89,17 @@ const selectionSort = (array, setArray) => {
         setter(newArray, time)
         time += 1
     }
+    function setter(ind) {
+        setTimeout(() => {
+            setSorting(false)
+            setSorted(true)
+        }, 100 * ind)
+    }
+    setter(time)
+    time += 1
 }
 
-const insertionSort = (array, setArray) => {
+const insertionSort = (array, setArray, setSorting, setSorted) => {
     let time = 1
     for(let i = 1; i < array.length; i++) {
         let key = array[i]
@@ -133,20 +143,28 @@ const insertionSort = (array, setArray) => {
             time += 1
         }
     }
+    function setter(ind) {
+        setTimeout(() => {
+            setSorting(false)
+            setSorted(true)
+        }, 5 * ind)
+    }
+    setter(time)
+    time += 1
 }
 
-const handleClick = (array, setArray, sortType) => {
+const handleClick = (array, setArray, sortType, setSorting, setSorted) => {
     switch (sortType) {
         case 'bubbleSort':
-            bubbleSort(array, setArray)
+            bubbleSort(array, setArray, setSorting, setSorted)
             break
 
         case 'selectionSort':
-            selectionSort(array, setArray)
+            selectionSort(array, setArray, setSorting, setSorted)
             break
 
         case 'insertionSort':
-            insertionSort(array, setArray)
+            insertionSort(array, setArray, setSorting, setSorted)
             break
         
         default:

@@ -10,7 +10,8 @@ import SortTypeButtons from './components/SortTypeButtons'
 function App() {
     const [array, setArray] = useState([])
     const [sortType, setSortType] = useState('bubbleSort')
-    // const [sorting, setSorting] = useState(false)
+    const [sorting, setSorting] = useState(false)
+    const [sorted, setSorted] = useState(false)
 
     useEffect(() => {
         const newArray = generateArray(100, 100, 400)
@@ -18,13 +19,20 @@ function App() {
     }, [])
 
     const onClick = () => {
-        // setSorting(true)
-        handleClick(array, setArray, sortType)
+        if (!sorting && !sorted) {
+            setSorting(true)
+            setTimeout(() => {
+                handleClick(array, setArray, sortType, setSorting, setSorted)
+            }, 50)
+        }
     }
 
     const generateArrayButtonClick = () => {
-        const newArray = generateArray(100, 100, 400)
-        setArray(newArray)
+        if (!sorting) {
+            const newArray = generateArray(100, 100, 400)
+            setArray(newArray)
+            setSorted(false)
+        }
     }
 
     return (

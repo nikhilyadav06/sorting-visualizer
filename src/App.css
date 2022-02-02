@@ -9,7 +9,8 @@ body {
 }
 
 h1 {
-    color: white;
+    color: #fff;
+    /* color: #F5465D; */
 }
 
 .app {
@@ -39,7 +40,8 @@ h1 {
 }
 
 .changeSortTypeButton.activeButton {
-    background: #fc6f03;
+    /* background: #fc6f03; */
+    background: #7F5497;
     color: white;
     font-weight: 700;
 }
@@ -64,8 +66,10 @@ h1 {
     font-size: 1rem;
     border-radius: 0.6rem;
     cursor: pointer;
-    background: #006774;
+    /* background: #006774; */
+    background: #253f4e;
     color: white;
+    font-weight: 700;
 }
 
 .sortButton {
@@ -75,7 +79,9 @@ h1 {
     font-size: 1rem;
     border-radius: 0.6rem;
     cursor: pointer;
+    /* background: #7F5497; */
     background: #fc6f03;
+    /* background: #F5465D; */
     color: white;
     font-weight: 700;
 }
