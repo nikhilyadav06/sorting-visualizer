@@ -5,6 +5,7 @@ function SortTypeButtons({ sortType, setSortType }) {
         <ChangeSortTypeButton type='Bubble Sort' value='bubbleSort' sortType={sortType} setSortType={setSortType} />
         <ChangeSortTypeButton type='Selection Sort' value='selectionSort' sortType={sortType} setSortType={setSortType} />
         <ChangeSortTypeButton type='Insertion Sort' value='insertionSort' sortType={sortType} setSortType={setSortType} />
+        <ChangeSortTypeButton type='Merge Sort' value='mergeSort' sortType={sortType} setSortType={setSortType} />
     </div>
 }
 
